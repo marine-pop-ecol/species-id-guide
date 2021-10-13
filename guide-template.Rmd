@@ -1,0 +1,12 @@
+---
+title: "Species ID Guide Template"
+author: "Cole Brookson"
+date: "10/13/2021"
+output: pdf_document
+---
+
+## *Eubalaena glacialis* (Northern right whale)
+
+### Figures
+
+![Northern wright whale](/images/northern-right-whale.jpg)
