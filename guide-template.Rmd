@@ -78,9 +78,12 @@ knitr::include_graphics(here::here("images", "bowhead-skull-lateral.png"))
 ```{r, message = FALSE, echo = FALSE}
 library(tidyverse)
 library(here)
+library(knitr)
+library(kableExtra)
 
 whale_table = read_csv(here("./data/whale-table.csv"))
-knitr::kable(whale_table, caption = "Whale morphometrics and other infomration.")
+
+
 ```
 
 ## Figures
@@ -97,3 +100,119 @@ whale_plot = ggplot(data = whale_data) +
   labs(x = "Whale Length", y = "Whale Weight")
 whale_plot
 ```
+
+```{r}
+# load the packages
+library(kableExtra)
+library(knitr)
+library(tidyverse)
+library(here)
+
+# read in the data
+ex_table = read_csv(here("./data/example.csv"))
+# check it's in data.frame() from not just tbl form
+ex_table=data.frame(ex_table)
+
+#write custom function to display the table how we want
+knit_table = function(df){
+  
+  df = data.frame(apply(df, function(x){gsub("<br>", "\n", x)}),
+    stringsAsFactors = FALSE)
+  
+  
+  df %>% 
+    mutateall(linebreak) %>% 
+    kable("latex", 
+          booktabs = TRUE, 
+          escape = FALSE, 
+          longtable = TRUE) %>% 
+    kable_styling(latex_options = "scale_down", 
+                  full_width = FALSE,) %>% 
+    column_spec(1, width = "5em") %>% 
+    column_spec(2, width = "5em") %>% 
+    column_spec(3, width = "5em") %>% 
+    column_spec(4, width = "5em") %>% 
+    column_spec(5, width = "5em") %>% 
+    column_spec(7, width = "20em") 
+}
+
+knit_table = function(df){
+    df = data.frame(lapply(df, function(x) {gsub("<br>", "\n", x)}), stringsAsFactors = F)
+
+  df %>% 
+    mutate_all(linebreak) %>% 
+    kable("latex", 
+          booktabs = TRUE, 
+          escape = FALSE, 
+          longtable = FALSE) %>% 
+    kable_styling(latex_options = "scale_down", 
+                  full_width = FALSE)  %>% 
+    column_spec(1, width = "5em") %>% 
+    column_spec(2, width = "5em") %>% 
+    column_spec(3, width = "5em") %>% 
+    column_spec(4, width = "5em") %>% 
+    column_spec(5, width = "5em") %>% 
+    column_spec(7, width = "20em")
+}
+
+knit_table(whale_table)
+
+
+
+```
+
+```{html}
+ <table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table> 
+```
+
+
+```{r}
+# library(dplyr)
+# library(knitr)
+# library(kableExtra)
+# 
+# knit_table <- function(df){
+#   if (is_html_output()) {
+#     df %>%
+#       kable("html", escape = F) %>%
+#       kable_styling()
+#   } else {
+#     df <- data.frame(lapply(df, function(x) {gsub("<br>", "\n", x)}), stringsAsFactors = F)
+# 
+#     df %>%  
+#       mutate_all(linebreak) %>%
+#       kable("latex", booktabs = T, escape = F)  
+#   }
+# }
+# 
+# df1 <- data.frame(col1 = c("a", "b"),
+#                   col2 = c("one<br>two", "three<br>four"))
+# 
+# knit_table(df1)
+
+```
+
+
+```{r}
+# library(pander)
+# library(descr)
+# pander::pander(descr::CrossTable(mtcars$am, mtcars$gear))
+```
+
+
