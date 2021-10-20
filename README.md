@@ -1,6 +1,6 @@
 # Species ID Guide Assignment 
 
-## A. Voucher Collection (10 points)Permalink
+## A. Voucher Collection (10 points)
 
 Each group is responsible for assembling and maintaining a voucher collection in the lab that contains ~10 individuals of each assigned species (except where species are rare, or where housing species in the lab is likely to cause stress to the individuals or spread disease between individuals in the lab). The goal of your collections is to capture the morphological diversity of each species necessary to identify it in the field.
 
@@ -24,7 +24,7 @@ Once you’ve figured out what to measure, use calipers, a microscope equipped w
 
 Once you have completed your morphological study and are confident in your species IDs, your team must upload an image and species-level identification for at least four species to iNaturalist. Login to your account (at [https://www.inaturalist.org/]) and join the project “BMSC-MPED-2021”.
 
-## C. ID Guide (20 points)Permalink
+## C. ID Guide (20 points)
 
 With your newfound knowledge, construct an ID guide to help your classmates identify your focal species in the field (note: some of this can be done prior to going to the field). We’ll grade these for accuracy, have you make the necessary corrections and then make them available to your classmates as an identification guide. Please submit your ID guide as a single RMarkdown document composed of two parts:
 
@@ -41,7 +41,7 @@ For each species, create a two-sided 8 x 11-inch page composed completely of you
 
 The final two pages of your ID Guide should include graphs of the morphological characteristics you measured for each species (Part C) and a summary table comparing the key information on size, morphology, trophic role and diet, and reproductive mode between the set of species.
 
-## D. Presentation (10 points)Permalink
+## D. Presentation (10 points)
 
 Finally, you will give a 7-10 min presentation to aid your classmates in learning about the identification and ecology of your taxonomic group. An effective presentation will:
 
